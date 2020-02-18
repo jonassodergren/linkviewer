@@ -48,7 +48,7 @@ cat all_job_ads.json | jq '.[] | [.url,.title,.identifier]' | jq -r '"<li data-q
 ```
 ## Run UI
 
-Host the ui catalog in a webserver. It can be served as a static web page.
+Host the docs/ catalog in a webserver. It is a static web page.
 
 ## Support
 
