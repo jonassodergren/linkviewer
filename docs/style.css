@@ -1,0 +1,46 @@
+/*  Search */
+
+.form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+/*   Search css */
+
+li {
+  display: none;
+  margin: 23px 0;
+}
+
+li a {
+    color: #3CA8FF;
+    text-decoration: initial;
+}
+li a:hover {
+    text-decoration: underline;
+}
+
+.show {
+  display: block;
+}
+
+h2,
+h3 {
+  margin: 0px 0;
+  line-height: 23px;
+  font-size: 18px;
+}
+
+div#wrap {
+  margin: 17px;
+}
+
+ul,
+ol {
+  padding: 0;
+}
