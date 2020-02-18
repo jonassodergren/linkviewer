@@ -86,7 +86,8 @@ function search(searchTerm) {
 
   for (var i = 0; i < results.length; i++) {
     var result = results[i];
-    $(listSelector + "[data-question-id=" + result.ref + "]").addClass("show");
+  //  $(listSelector + "[data-question-id=" + result.ref + "]").addClass("show");
+   $("#"+result.ref).addClass("show");
   }
 }
 
