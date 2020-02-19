@@ -1,4 +1,4 @@
-/*  Search */
+
 
 .form-control-borderless {
     border: none;
@@ -10,7 +10,7 @@
     box-shadow: none;
 }
 
-/*   Search css */
+
 
 li {
   display: none;
@@ -24,6 +24,7 @@ li a {
 li a:hover {
     text-decoration: underline;
 }
+
 
 .show {
   display: block;

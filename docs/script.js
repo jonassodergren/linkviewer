@@ -40,6 +40,11 @@ var listSelector = "#question-list-container li";
 
 
 
+$(function(){
+  $("#links").load("links.html");
+});
+
+
 var idx;
 //$.getJSON("index.json", function(json) {
 //  //console.log(json);
@@ -52,7 +57,9 @@ var idx;
 localforage.getItem('search_index').then(function(value) {
     // This code runs once the value has been loaded
     // from the offline store.
+    console.time("Load DB");
     idx = lunr.Index.load(value);
+    console.timeEnd("Load DB");
     //console.log(value);
 }).catch(function(err) {
   $.getJSON("index.json", function(json) {
@@ -126,9 +133,9 @@ $(".all").click(function() {
 //});
 
 $("#search2").click(function(event) {
-  console.time("timer");
+  console.time("search");
     search($("#searchterm").val());
-    console.timeEnd("timer");
+    console.timeEnd("search");
   //  btnMostrarSeccion($(this));
     event.preventDefault();
 //    search($("#searchterm").val());
