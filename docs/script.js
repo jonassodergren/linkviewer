@@ -3,7 +3,6 @@ var trace = console.log.bind(console);
 var listSelector = "#question-list-container li";
 
 
-
 //var idx;
 //$.getJSON("index.json", function(json) {
 //  console.log("start loading index");
@@ -54,7 +53,7 @@ var idx;
 //  });
 //});
 
-localforage.getItem('search_index').then(function(value) {
+localforage.getItem('search_index3').then(function(value) {
     // This code runs once the value has been loaded
     // from the offline store.
     console.time("Load DB");
@@ -65,7 +64,7 @@ localforage.getItem('search_index').then(function(value) {
   $.getJSON("index.json", function(json) {
     //console.log(json);
     idx = lunr.Index.load(json);
-    localforage.setItem('search_index', json, function (err) {
+    localforage.setItem('search_index3', json, function (err) {
       console.log(err);
     });
   });
