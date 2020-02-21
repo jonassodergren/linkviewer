@@ -53,14 +53,14 @@ var idx;
 //  });
 //});
 
-localforage.getItem('search_index3').then(function(value) {
+//localforage.getItem('search_index3').then(function(value) {
     // This code runs once the value has been loaded
     // from the offline store.
-    console.time("Load DB");
-    idx = lunr.Index.load(value);
-    console.timeEnd("Load DB");
+//    console.time("Load DB");
+//    idx = lunr.Index.load(value);
+//    console.timeEnd("Load DB");
     //console.log(value);
-}).catch(function(err) {
+//}).catch(function(err) {
   $.getJSON("index.json", function(json) {
     //console.log(json);
     idx = lunr.Index.load(json);
@@ -68,8 +68,8 @@ localforage.getItem('search_index3').then(function(value) {
       console.log(err);
     });
   });
-    console.log(err);
-});
+//    console.log(err);
+//});
 
 
 //
