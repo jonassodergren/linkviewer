@@ -37,6 +37,9 @@ var listSelector = "#question-list-container li";
 //  }, this);
 //});
 
+if (navigator.serviceWorker) {
+   navigator.serviceWorker.register('/sw.js', {scope: '/'})
+ }
 
 
 $(function(){
