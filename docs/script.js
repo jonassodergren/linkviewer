@@ -1,4 +1,4 @@
-console.clear();
+//console.clear();
 var trace = console.log.bind(console);
 var listSelector = "#question-list-container li";
 
@@ -37,13 +37,38 @@ var listSelector = "#question-list-container li";
 //  }, this);
 //});
 
+//$(window).load(function() {
+  // Animate loader off screen
+//  $(".se-pre-con").fadeOut("slow");
+//});
+$(document).on("loadedHtml", function(){
+
+
+//$( window ).on("load", function() {
+        // Handler for .load() called.
+
+        $(".se-pre-con").fadeOut("slow");
+//});
+
+});
+
 if (navigator.serviceWorker) {
    navigator.serviceWorker.register('sw.js', {scope: '/linkviewer/'})
  }
 
 
 $(function(){
-  $("#links").load("links.html");
+  $("#links").load("links.html",function(){
+
+    $.event.trigger({
+	type: "loadedHtml",
+	message: "Hello World!",
+	time: new Date()
+});
+
+  });
+
+
 });
 
 
@@ -67,9 +92,9 @@ var idx;
   $.getJSON("index.json", function(json) {
     //console.log(json);
     idx = lunr.Index.load(json);
-    localforage.setItem('search_index3', json, function (err) {
-      console.log(err);
-    });
+//    localforage.setItem('search_index3', json, function (err) {
+//      console.log(err);
+//    });
   });
 //    console.log(err);
 //});
