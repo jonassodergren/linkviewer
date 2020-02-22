@@ -53,7 +53,7 @@ $(document).on("loadedHtml", function(){
 });
 
 if (navigator.serviceWorker) {
-   navigator.serviceWorker.register('sw.js', {scope: '/linkviewer/'})
+   navigator.serviceWorker.register('/linkviewer/sw.js', {scope: '/linkviewer/'})
  }
 
 
