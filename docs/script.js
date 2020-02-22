@@ -38,7 +38,7 @@ var listSelector = "#question-list-container li";
 //});
 
 if (navigator.serviceWorker) {
-   navigator.serviceWorker.register('/sw.js', {scope: '/'})
+   navigator.serviceWorker.register('sw.js', {scope: '/'})
  }
 
 
