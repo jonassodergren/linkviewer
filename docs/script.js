@@ -3,6 +3,19 @@ var trace = console.log.bind(console);
 var listSelector = "#question-list-container li";
 
 
+// body scroll
+
+//const bodyScrollLock = require('body-scroll-lock');
+//const disableBodyScroll = bodyScrollLock.disableBodyScroll;
+//const enableBodyScroll = bodyScrollLock.enableBodyScroll;
+
+//const targetElement = document.querySelector("body");
+
+// 3. ...in some event handler after showing the target element...disable body scroll
+//disableBodyScroll(targetElement);
+
+//
+
 //var idx;
 //$.getJSON("index.json", function(json) {
 //  console.log("start loading index");

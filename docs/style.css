@@ -1,3 +1,11 @@
+/*html, body {
+  overflow: hidden;
+}*/
+
+body {
+-webkit-overflow-scrolling: touch;
+}
+
 /* Preload animation */
 
 /* Paste this css to your style sheet file or under head tag */
