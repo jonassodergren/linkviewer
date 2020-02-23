@@ -52,27 +52,79 @@ $(document).on("loadedHtml", function(){
 
 });
 
+// Iframe stream hack
+
+// Create an iframe:
+//const iframe = document.createElement('iframe');
+
+// Put it in the document (but hidden):
+//iframe.style.display = 'none';
+//document.body.appendChild(iframe);
+
+// Wait for the iframe to be ready:
+//iframe.onload = () => {
+  // Ignore further load events:
+//  iframe.onload = null;
+
+  // Write a dummy tag:
+  //iframe.contentDocument.write('<ul id="links">');
+
+  // Get a reference to that element:
+  //const streamingElement = iframe.contentDocument.querySelector('links');
+
+  // Pull it out of the iframe & into the parent document:
+  //document.body.appendChild(streamingElement);
+
+//  document.body.getElementById('links')
+
+  // Write some more content - this should be done async:
+//  iframe.contentDocument.write('<p>Hello!</p>');
+
+  // Keep writing content like above, and then when we're done:
+  //iframe.contentDocument.write('</ul>');
+//  iframe.contentDocument.close();
+//};
+
+// Initialise the iframe
+//iframe.src = '';
+
+// Iframe stream hack
+
 if (navigator.serviceWorker) {
    navigator.serviceWorker.register('/linkviewer/sw.js', {scope: '/linkviewer/'})
  }
 
+// Load links
 
-$(function(){
-  console.time("Load links");
-  $("#links").load("links.html",function(){
+//console.time("Load links");
+// fetch("links.html")
+//     .then((response) => response.text())
+//     .then((html) => {
+//         document.getElementById("links").innerHTML = html;
+//         $.event.trigger({
+//      type: "loadedHtml",
+//      message: "Hello World!",
+//      time: new Date()
+//     });
+//     console.timeEnd("Load links");
+//     })
+//     .catch((error) => {
+//         console.warn(error);
+//     });
 
-    $.event.trigger({
-	type: "loadedHtml",
-	message: "Hello World!",
-	time: new Date()
-});
+// Load links
 
-console.timeEnd("Load links");
-
-  });
-
-
-});
+//$(function(){
+//  console.time("Load links");
+//  $("#links").load("links.html",function(){
+//    $.event.trigger({
+//	type: "loadedHtml",
+//	message: "Hello World!",
+//	time: new Date()
+//});
+//console.timeEnd("Load links");
+//  });
+//});
 
 
 var idx;
