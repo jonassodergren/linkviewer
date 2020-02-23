@@ -1,0 +1,13 @@
+{
+  "short_name": "Linkviewer",
+  "name": "Linkviewer: Länksökaren",
+  "description": "Samlar länkar till jobbannonser",
+  "start_url": "./",
+  "background_color": "#3367D6",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#3367D6",
+  "serviceworker": {
+  "src": "./sw.js"
+  }
+}

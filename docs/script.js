@@ -58,6 +58,7 @@ if (navigator.serviceWorker) {
 
 
 $(function(){
+  console.time("Load links");
   $("#links").load("links.html",function(){
 
     $.event.trigger({
@@ -65,6 +66,8 @@ $(function(){
 	message: "Hello World!",
 	time: new Date()
 });
+
+console.timeEnd("Load links");
 
   });
 
@@ -89,13 +92,17 @@ var idx;
 //    console.timeEnd("Load DB");
     //console.log(value);
 //}).catch(function(err) {
+console.time("Load json file");
   $.getJSON("index.json", function(json) {
     //console.log(json);
+    console.time("Load json");
     idx = lunr.Index.load(json);
+    console.timeEnd("Load json");
 //    localforage.setItem('search_index3', json, function (err) {
 //      console.log(err);
 //    });
   });
+  console.timeEnd("Load json file");
 //    console.log(err);
 //});
 
