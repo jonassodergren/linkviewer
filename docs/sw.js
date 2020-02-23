@@ -5,7 +5,7 @@ var URLS = [                            // Add URL you want to cache in this lis
   '/linkviewer/',                     // If you have separate JS/CSS files,
   '/linkviewer/index.html',
   '/linkviewer/index.json',
-  '/linkviewer/links.html'            
+  '/linkviewer/links_ndjson.html'           
 ]
 
 // Respond with cached resources
