@@ -5,17 +5,6 @@ var listSelector = "#question-list-container li";
 
 // body scroll
 
-$(window).on('load', function() {
-  $('#timeline').hover(
-    function() {
-      $('body').addClass('no-scrollbar');
-    },
-    function() {
-      $('body').removeClass('no-scrollbar');
-    }
-  );
-});
-
 //const bodyScrollLock = require('body-scroll-lock');
 //const disableBodyScroll = bodyScrollLock.disableBodyScroll;
 //const enableBodyScroll = bodyScrollLock.enableBodyScroll;

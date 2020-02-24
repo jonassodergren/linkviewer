@@ -1,16 +1,10 @@
-/*html, body {
+html, body {
   overflow: hidden;
-}*/
-
-body{overflow-x: hidden;}
-
-body.no-scrollbar {overflow:hidden;}
-
-/*
-body {
--webkit-overflow-scrolling: touch;
 }
-*/
+
+body{
+  -webkit-overflow-scrolling: touch;
+}
 
 /* Preload animation */
 
