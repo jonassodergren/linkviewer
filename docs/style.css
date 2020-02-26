@@ -1,3 +1,29 @@
+/* JobTech layout */
+
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
+
+body {
+    background: #fefefe;
+}
+
+.font_headline {
+    font-family: 'Abril Fatface', cursive;
+}
+
+h1, h2, h3, body {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+li {
+    font-family: 'Calibri', sans-serif;
+}
+
+
+/* End jobtech layout */
+
+
+
 html, body {
   overflow-x: hidden;
 }
