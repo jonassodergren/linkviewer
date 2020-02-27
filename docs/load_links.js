@@ -57,7 +57,7 @@ function streamJSON(url, callback) {
   //var container = content.querySelector('.js-discussion');
   var container = document.getElementById('links');
 
-  streamJSON('links_trunc_ndjson.json', function(comment) {
+  streamJSON('links_trunc_ndjson2.json', function(comment) {
     //var div = document.createElement('div');
     //div.className = comment.class;
     //div.innerHTML = comment.html;
