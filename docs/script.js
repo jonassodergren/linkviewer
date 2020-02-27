@@ -190,9 +190,15 @@ function search(searchTerm) {
   // reset(hide) all entries
   $(listSelector).removeClass("show");
 
-  for (var i = 0; i < results.length; i++) {
+  var container = document.getElementById('links');
+
+//  for (var i = 0; i < results.length; i++) {
+for (var i = results.length-1; i>0; i--) {
     var result = results[i];
+    //console.log(result);
   //  $(listSelector + "[data-question-id=" + result.ref + "]").addClass("show");
+   var li = $("#"+result.ref);
+   container.prepend( li[0] );
    $("#"+result.ref).addClass("show");
   }
 }
