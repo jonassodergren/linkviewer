@@ -158,7 +158,7 @@ var idx;
     //console.log(value);
 //}).catch(function(err) {
 console.time("Load json file");
-  $.getJSON("index.json", function(json) {
+  $.getJSON("index2.json", function(json) {
     //console.log(json);
     console.time("Load json");
     idx = lunr.Index.load(json);
