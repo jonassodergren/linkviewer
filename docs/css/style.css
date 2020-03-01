@@ -1,0 +1,99 @@
+/* JobTech layout */
+
+/* @import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap'); */
+
+@import url('webfonts');
+
+body {
+    background: #fefefe;
+}
+
+test {
+    font-family: 'Abril Fatface', cursive;
+}
+
+h1, h2, h3, body {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+li {
+    font-family: 'Calibri', sans-serif;
+}
+
+
+/* End jobtech layout */
+
+
+
+html, body {
+  overflow-x: hidden;
+}
+body{
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Preload animation */
+
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript,
+if it's not present, don't show loader**/
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(../images/Preloader_3.gif) center no-repeat #fff;
+}
+
+/* End preload */
+
+.form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+
+
+li {
+  display: none;
+  margin: 23px 0;
+}
+
+li a {
+    color: #3CA8FF;
+    text-decoration: initial;
+}
+li a:hover {
+    text-decoration: underline;
+}
+
+
+.show {
+  display: block;
+}
+
+h2,
+h3 {
+  margin: 0px 0;
+  line-height: 23px;
+  font-size: 18px;
+}
+
+div#wrap {
+  margin: 17px;
+}
+
+ul,
+ol {
+  padding: 0;
+}
