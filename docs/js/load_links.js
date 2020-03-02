@@ -1,4 +1,5 @@
 
+
 function streamJSON(url, callback) {
   return new Promise(function(resolve, reject) {
 
@@ -17,11 +18,13 @@ function str2ab(str) {
   return buf;
 }
 
+
     function processChunk(chunk) {
       try {
       //  var buf = str2ab(chunk);
       //  var compressed = new TextEncoder("utf-8").encode(chunk);
       //  var test = pako.inflate(new Uint8Array(chunk), { to: 'string' });
+
         var data = JSON.parse(chunk);
         //var data = JSON.parse(chunk);
         //pako.inflate(request.response, { to: 'string' })
@@ -34,10 +37,9 @@ function str2ab(str) {
         return;
       }
 //var node = document.createRange().createContextualFragment(data.item);
+
       callback(data.item);
     }
-
-
 
     xhr.onprogress = function() {
       var parts = xhr.response.slice(pos).split('\n');
@@ -51,7 +53,10 @@ function str2ab(str) {
     xhr.onload = function() {
       //xhr.response = gzip;
       var chunk = xhr.response.slice(pos);
-      if (chunk) processChunk(chunk);
+      if (chunk)
+      processChunk(buffer);
+
+
       resolve();
       $.event.trigger({
       type: "loadedHtml",
@@ -67,6 +72,8 @@ function str2ab(str) {
 
     xhr.responseType = 'text';
     xhr.open('GET', url, true);
+  //  xhr.setRequestHeader('accept-encoding','gzip');
+  //  xhr.setRequestHeader('content-encoding','gzip');
     //xhr.setRequestHeader('accept-encoding','gzip');
     //xhr.setRequestHeader('Content-type', 'application/json');
     xhr.send();

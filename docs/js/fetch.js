@@ -14,6 +14,10 @@ function load_gzip(){
           var i = 0;
       }
   };
+  xmlhttp.onprogress = function() {
+    var parts = xmlhttp.response;
+    var i = 0;
+  };
   xmlhttp.open("GET", url, true);
   xmlhttp.send();
 }
@@ -241,4 +245,4 @@ function writeToDOM(rs) {
 //    );
 //}
 
-process2();
+//process2();
