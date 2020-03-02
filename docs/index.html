@@ -28,11 +28,15 @@
 
     <!-- Preload -->
 
+<!--
       <div class="row justify-content-center">
   	<div class="se-pre-con">
     <img src="images/logos.png" alt="Företag" style="max-width: 100%;">
     </div>
     </div>
+  -->
+
+
 
   	<!-- Ends -->
 
@@ -78,15 +82,18 @@
                               <form class="card card-sm">
                                   <div class="card-body row no-gutters align-items-center">
                                       <div class="col-auto">
-                                          <i class="fas fa-link h4 text-body"></i>
+                                          <i id="link_icon" class="fas fa-link h4 text-body"></i>
+                                          <div id="spinner" class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
                                       </div>
 
                                       <div class="col">
                                           <input id="searchterm" class="form-control form-control-lg form-control-borderless" type="search" placeholder="Sök bland annonstitlar">
                                       </div>
 
+
                                       <div class="col-auto">
-                                          <button id="search2" class="btn btn-lg btn-dark" type="submit">Sök</button>
+                                          <button id="search2" class="btn btn-lg btn-dark" type="submit"> Sök
+                                          </button>
                                       </div>
 
                                   </div>

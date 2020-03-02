@@ -51,17 +51,26 @@ var listSelector = "#question-list-container li";
 //  }, this);
 //});
 
-//$(window).load(function() {
-  // Animate loader off screen
-//  $(".se-pre-con").fadeOut("slow");
-//});
+
+  //Animate loader off screen
+  $("#spinner").show();
+  $("#link_icon").hide();
+  $("#searchterm").attr("placeholder", "Laddar annonslänkar");
+  $('#search2').prop('disabled', true);
+
+
 $(document).on("loadedHtml", function(){
 
 
 //$( window ).on("load", function() {
         // Handler for .load() called.
 
-        $(".se-pre-con").fadeOut("slow");
+        //$(".se-pre-con").fadeOut("slow");
+          $("#spinner").hide();
+          $("#link_icon").show();
+          $("#searchterm").attr("placeholder", "Sök annonslänkar").blur();
+          $('#search2').prop('disabled', false);
+
 //});
 
 });
