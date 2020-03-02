@@ -80,7 +80,7 @@ function str2ab(str) {
   var container = document.getElementById('links');
 
   var buf = '';
-  i = 0;
+  var i = 0;
 
   streamJSON('data/links_trunc_ndjson4.json', function(comment) {
     //var div = document.createElement('div');
@@ -90,9 +90,10 @@ function str2ab(str) {
     //container.appendChild(comment);
     //comment.appendTo(container);
     buf += comment;
-    if (i % 90000 === 0){
+    if (i % 10000 === 0){
     container.insertAdjacentHTML('beforeend', buf);
     buf = '';
     }
+    i++;
   });
   container.insertAdjacentHTML('beforeend', buf);
