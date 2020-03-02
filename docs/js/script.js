@@ -126,7 +126,7 @@ $(document).on("loadedHtml", function(){
 // Iframe stream hack
 
 if (navigator.serviceWorker) {
-   navigator.serviceWorker.register('/linkviewer/js/sw.js', {scope: '/linkviewer/'})
+   navigator.serviceWorker.register('/linkviewer/sw.js', {scope: '/linkviewer/'})
  }
 
 // Load links
