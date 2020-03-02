@@ -1,9 +1,9 @@
 /* JobTech layout */
 
-/* @import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap'); */
+ @import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
+ @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
 
-@import url('webfonts');
+/*@import url('/webfonts');*/
 
 body {
     background: #fefefe;

@@ -1,5 +1,5 @@
 //import ndjsonStream from "can-ndjson-stream";
-import { ndjsonStream, stache, stacheConverters, StacheElement, type } from "//unpkg.com/can@6/everything.mjs";
+//import { ndjsonStream, stache, stacheConverters, StacheElement, type } from "//unpkg.com/can@6/everything.mjs";
 
 //var zlib = require('jQuery');
 
