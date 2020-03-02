@@ -90,7 +90,7 @@ function str2ab(str) {
     //container.appendChild(comment);
     //comment.appendTo(container);
     buf += comment;
-    if (i % 10000 === 0){
+    if (i % 50000 === 0){
     container.insertAdjacentHTML('beforeend', buf);
     buf = '';
     }
