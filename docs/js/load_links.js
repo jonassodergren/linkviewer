@@ -26,6 +26,10 @@ function str2ab(str) {
       //  var test = pako.inflate(new Uint8Array(chunk), { to: 'string' });
 
         var data = JSON.parse(chunk);
+        //var data3 = JSON.stringify(chunk.slice(9, chunk.length-2));
+        //var data2 =  {
+        //        "item" : "<li>test</li>"
+        //    };
         //var data = JSON.parse(chunk);
         //pako.inflate(request.response, { to: 'string' })
         //var data = JSON.parse(pako.inflate(chunk, { to: 'string' }));
@@ -89,18 +93,18 @@ function str2ab(str) {
   var buf = '';
   var i = 0;
 
-  streamJSON('data/links_trunc_ndjson4.json', function(comment) {
+  streamJSON('data/links_trunc_ndjson3.json', function(comment) {
     //var div = document.createElement('div');
     //div.className = comment.class;
     //div.innerHTML = comment.html;
     //container.appendChild(div); // html = $.parseHTML( str )
     //container.appendChild(comment);
     //comment.appendTo(container);
-    buf += comment;
-    if (i % 50000 === 0){
-    container.insertAdjacentHTML('beforeend', buf);
-    buf = '';
-    }
-    i++;
+  //  buf += comment;
+  //  if (i % 50000 === 0){
+    container.insertAdjacentHTML('beforeend', comment);
+  //  buf = '';
+  //  }
+  //  i++;
   });
-  container.insertAdjacentHTML('beforeend', buf);
+//  container.insertAdjacentHTML('beforeend', buf);

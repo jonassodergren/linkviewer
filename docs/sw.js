@@ -27,6 +27,16 @@ self.addEventListener('fetch', function (e) {
   )
 })
 
+// Cache index.html
+self.addEventListener('message', event => {
+  if (event.data) {
+  //  let data = JSON.parse(event.data); // parse the message back to JSON
+    if (event.data == "CacheIndex") { // check the action
+        self.toolbox.precache(["index.html"]); // here you can use sw-toolbox or anything to cache your stuff.
+    }
+  }
+});
+
 // Cache resources
 self.addEventListener('install', function (e) {
   e.waitUntil(

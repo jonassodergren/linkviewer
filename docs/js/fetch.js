@@ -5,7 +5,7 @@
 
 function load_gzip(){
   var xmlhttp = new XMLHttpRequest();
-  var url = "data/index2.json";
+  var url = "data/index_yrke.json";
 
   xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {

@@ -51,11 +51,15 @@ var listSelector = "#question-list-container li";
 //  }, this);
 //});
 
+if (navigator.serviceWorker) {
+   navigator.serviceWorker.register('/linkviewer/sw.js', {scope: '/linkviewer/'})
+ }
+
 
   //Animate loader off screen
   $("#spinner").show();
   $("#link_icon").hide();
-  $("#searchterm").attr("placeholder", "Laddar annonslänkar");
+  $("#searchterm").attr("placeholder", "Laddar länkar");
   $('#search2').prop('disabled', true);
 
 
@@ -70,6 +74,11 @@ $(document).on("loadedHtml", function(){
           $("#link_icon").show();
           $("#searchterm").attr("placeholder", "Sök annonslänkar").blur();
           $('#search2').prop('disabled', false);
+
+          // Cache the loaded page
+          if (navigator.serviceWorker) {
+        //  navigator.serviceWorker.controller.postMessage("CacheIndex");
+        }
 
 //});
 
@@ -134,10 +143,6 @@ $(document).on("loadedHtml", function(){
 
 // Iframe stream hack
 
-if (navigator.serviceWorker) {
-   navigator.serviceWorker.register('/linkviewer/sw.js', {scope: '/linkviewer/'})
- }
-
 // Load links
 
 //console.time("Load links");
@@ -184,7 +189,8 @@ function htmlElementsToJSON(listSelector, unmarschallFunction) {
 }
 
 function search(searchTerm) {
-  var results = idx.search("title:"+searchTerm);
+  //var results = idx.search("title:"+searchTerm);
+var results = idx.search(searchTerm);
 
   // reset(hide) all entries
   $(listSelector).removeClass("show");
@@ -197,7 +203,8 @@ for (var i = results.length-1; i>0; i--) {
     //console.log(result);
   //  $(listSelector + "[data-question-id=" + result.ref + "]").addClass("show");
    var li = $("#"+result.ref);
-   container.prepend( li[0] );
+   var div = li[0];
+   container.prepend( div );
    $("#"+result.ref).addClass("show");
   }
 }
