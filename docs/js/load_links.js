@@ -93,7 +93,7 @@ function str2ab(str) {
   var buf = '';
   var i = 0;
 
-  streamJSON('data/links_trunc_ndjson3.json', function(comment) {
+  streamJSON('data/links_trunc_ndjson5.json', function(comment) {
     //var div = document.createElement('div');
     //div.className = comment.class;
     //div.innerHTML = comment.html;
