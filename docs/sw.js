@@ -2,10 +2,10 @@ var APP_PREFIX = 'LinkViewer'     // Identifier for this app (this needs to be c
 var VERSION = 'version2'              // Version of the off-line cache (change this value everytime you want to update cache)
 var CACHE_NAME = APP_PREFIX + VERSION
 var URLS = [                            // Add URL you want to cache in this list.
-  '/linkviewer/',                     // If you have separate JS/CSS files,
-  '/linkviewer/index.html',
+//  '/linkviewer/',                     // If you have separate JS/CSS files,
+//  '/linkviewer/index.html',
   '/linkviewer/data/index2.json',
-  '/linkviewer/data/links_trunc_ndjson4.json'
+  '/linkviewer/data/links_trunc_ndjson5.json'
 ]
 
 // Respond with cached resources
