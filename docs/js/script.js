@@ -3,8 +3,6 @@
 var trace = console.log.bind(console);
 var listSelector = "#question-list-container li";
 
-const ssyk_utan_utbildning = [2315,6670,7316,4117,5985,3966,4155,1549,438,1777,7271,257,5852,470,5375,5499,4143,6207,2959,396,2306,397,2250,5044,4126,5830,4332,2289,5357,2284,449,6810,5936,5846,3470,2249,5857,6006,6723,5556,5987,6285,7580,294,4129,472,5718,7535,451,452,5277,5278,474,5684,5419,6343,4890,6012,3726,7017,225,5874,6400,3727,443,5713,5799,455,4133,710,6286,458,446,6970,6684,2155,2275,264,6871,2276,712,721,459,4136,5147,2291,5994,483,2138,2001,398,6211,1063,1005,1119,5663,1268,4163,6389,6761,1094,998,1000,6409,5305,1014,1154,929,1164,1170,4829,5629,4366,2164,7328,5986,5510,297,7018,3473,7113,2881,7501,5258,5418,5907,298,5798,5505,7243,2339,299,2141,1105,7662,866,6342,5597,4891,2675,5555,868,6672,7536,4436,5490,462,5707,7655,6957,1544,4437,5873,5046,7656,2890,300,6787,6209,6165,2312,726,464,7446,6360,886,2152,7468,5377,2233,6794,2673,6013,7160,5875,2495,466,5153,6671,2352,2234,7585,5866,891,2350,468,5302,5263,7317,5797,5984,4177,5624,2345,7119];
-
 
 // body scroll
 
@@ -79,7 +77,7 @@ $(document).on("loadedHtml", function(){
 
           // Cache the loaded page
           if (navigator.serviceWorker) {
-        //  navigator.serviceWorker.controller.postMessage("CacheIndex");
+          navigator.serviceWorker.controller.postMessage("CacheIndex");
         }
 
 //});
@@ -191,23 +189,30 @@ function htmlElementsToJSON(listSelector, unmarschallFunction) {
 }
 
 function search(searchTerm) {
-  //var results = idx.search("title:"+searchTerm);
-var results = idx.search(searchTerm);
+  var results = idx.search("title:"+searchTerm);
 
   // reset(hide) all entries
   $(listSelector).removeClass("show");
 
   var container = document.getElementById('links');
 
+  //$('*[class=""]').removeAttr('class');
+
 //  for (var i = 0; i < results.length; i++) {
 for (var i = results.length-1; i>0; i--) {
     var result = results[i];
     //console.log(result);
   //  $(listSelector + "[data-question-id=" + result.ref + "]").addClass("show");
-   var li = $("#"+result.ref);
-   var div = li[0];
-   container.prepend( div );
-   $("#"+result.ref).addClass("show");
+   var li = $('#'+result.ref);
+   var li2 = document.getElementById(result.ref);
+  // console.log("#"+result.ref);
+   if (typeof li[0] !== "undefined"){
+     container.prepend( li[0] );
+     //console.log(li[0]);
+     $("#"+result.ref).addClass("show");
+   }else{
+     console.log(result.ref);
+   }
   }
 }
 
@@ -237,22 +242,8 @@ function showAll(searchTerm) {
 //});
 
 // and show all results when clicking this button
-$("#utan_utbildning").click(function() {
-  //showAll();
-  var container = document.getElementById('links').children;
-
-  var j = 0;
-for (var i = 0; i < container.length; i++) {
-  //  console.log(container[i].id); //second console output
-  var ssyk = container[i].dataset.ssyk;
-
-  if (ssyk_utan_utbildning.includes(parseInt(ssyk))){
-    $("#"+container[i].id).addClass("show");
-  j++;
-  }
-}
-console.log("Number of jobs: "+j);
-
+$(".all").click(function() {
+  showAll();
 });
 
 //$("#search2").click(function() {

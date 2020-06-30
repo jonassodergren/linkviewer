@@ -5,7 +5,7 @@
 
 function load_gzip(){
   var xmlhttp = new XMLHttpRequest();
-  var url = "data/index_yrke.json";
+  var url = "data/index.json";
 
   xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -14,6 +14,15 @@ function load_gzip(){
           var i = 0;
       }
   };
+
+xmlhttp.onload = function() {
+  $.event.trigger({
+  type: "loadedHtml",
+  message: "Hello World!",
+  time: new Date()
+ });
+}
+
   xmlhttp.onprogress = function() {
     var parts = xmlhttp.response;
     var i = 0;

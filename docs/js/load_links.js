@@ -26,6 +26,7 @@ function str2ab(str) {
       //  var test = pako.inflate(new Uint8Array(chunk), { to: 'string' });
 
         var data = JSON.parse(chunk);
+        count++;
         //var data3 = JSON.stringify(chunk.slice(9, chunk.length-2));
         //var data2 =  {
         //        "item" : "<li>test</li>"
@@ -41,6 +42,7 @@ function str2ab(str) {
         return;
       }
 //var node = document.createRange().createContextualFragment(data.item);
+
 
       callback(data.item);
     }
@@ -69,6 +71,10 @@ function str2ab(str) {
      });
     };
 
+    xhr.onloadend = function() {
+       container.insertAdjacentHTML('beforeend', buf);
+    };
+
 
     xhr.onerror = function() {
       reject(Error('Connection failed'));
@@ -93,18 +99,20 @@ function str2ab(str) {
   var buf = '';
   var i = 0;
 
-  streamJSON('data/links_trunc_ndjson5.json', function(comment) {
+  var count = 0;
+
+  streamJSON('data/links.json', function(comment) {
     //var div = document.createElement('div');
     //div.className = comment.class;
     //div.innerHTML = comment.html;
     //container.appendChild(div); // html = $.parseHTML( str )
     //container.appendChild(comment);
     //comment.appendTo(container);
-  //  buf += comment;
-  //  if (i % 50000 === 0){
-    container.insertAdjacentHTML('beforeend', comment);
-  //  buf = '';
-  //  }
-  //  i++;
+    buf += comment;
+    if (i % 25000 === 0){
+    container.insertAdjacentHTML('beforeend', buf);
+    buf = '';
+    }
+    i++;
   });
-//  container.insertAdjacentHTML('beforeend', buf);
+  //  container.insertAdjacentHTML('beforeend', buf);

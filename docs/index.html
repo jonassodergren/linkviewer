@@ -22,7 +22,7 @@
   </head>
   <body>
   <!-- partial:index.partial.html -->
-  <div id="wrap">
+<!--  <div id="wrap">  -->
   <div class="container-fluid">
 
 
@@ -42,16 +42,14 @@
 
     <div class="row justify-content-center">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg bg-light">
   <a href="#"><img src="images/JobTech_black.svg" width="150"></a>
-
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link" href="https://blog.jobtechdev.se/">Läs mer</a>
-      <a class="nav-item nav-link" href="data/raw_data.json">Ladda ner länkdata</a>
     </div>
   </div>
 </nav>
@@ -60,33 +58,24 @@
           <div class="row justify-content-center">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
 
-    <div class="jumbotron bg-light">
+    <div class="card-body bg-light text-center">
     <h1 class="display-4">Linkviewer</h1>
-    <p class="lead">Alla annonslänkar är samlade och leder till ursprungssajterna.<br/>
+    <p class="lead">Länkar till alla annonser<br/>
     </p>
     </div>
 
-  </div>
-  </div>
+<!--
+    <div class="card bg-light border-0">
+  <img class="card-img-top" src="images/logos.png" alt="Alla deltagare">
+</div>
+-->
 
-  <div class="row justify-content-center">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
-  <div class="alert alert-dark" role="alert">
-    Tjänsten är under utveckling. <a href="#" class="alert-link">Länkarna</a> skapades den 2020-02-14.
   </div>
-</div>
-</div>
+  </div>
 
       <br/>
-
-
   	<div class="row justify-content-center">
                       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
-
-                        <nav class="nav">
-                        <a id="utan_utbildning" class="nav-link" href="#">Jobb utan krav på utbildning</a>
-                      </nav>
-
                               <form class="card card-sm">
                                   <div class="card-body row no-gutters align-items-center">
                                       <div class="col-auto">
@@ -106,18 +95,12 @@
 
                                   </div>
                               </form>
-
-                            <!--  <p>
-                                <H3>Sökpaket</H3>
-                              <span><a id="utan_utbildning" href="#" class="alert-link">Jobb utan krav på utbildning</a></span>
-                            </p>
-                          -->
                           </div>
 
                       </div>
 
       <div class="row justify-content-center">
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 
     <div class="questions">
       <div id="question-list-container">
@@ -149,15 +132,9 @@
   <!-- center columns -->
 
 
-  </div>
+<!--  </div>  -->
 
 
-
-
-  <!-- partial -->
-  <!--
-  <script data-main="js/main" src='js/require.js'></script>
--->
 
 <script src="js/jquery-3.4.1.min.js"></script>
 <script type="module" src="js/fetch.js"></script>

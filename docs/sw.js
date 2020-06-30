@@ -1,11 +1,11 @@
 var APP_PREFIX = 'LinkViewer'     // Identifier for this app (this needs to be consistent across every cache update)
-var VERSION = 'version2'              // Version of the off-line cache (change this value everytime you want to update cache)
+var VERSION = 'version1'              // Version of the off-line cache (change this value everytime you want to update cache)
 var CACHE_NAME = APP_PREFIX + VERSION
 var URLS = [                            // Add URL you want to cache in this list.
 //  '/linkviewer/',                     // If you have separate JS/CSS files,
 //  '/linkviewer/index.html',
   '/linkviewer/data/index2.json',
-  '/linkviewer/data/links_trunc_ndjson5.json'
+  '/linkviewer/data/links_trunc_ndjson4.json'
 ]
 
 // Respond with cached resources
@@ -28,11 +28,25 @@ self.addEventListener('fetch', function (e) {
 })
 
 // Cache index.html
+self.importScripts('js/sw-toolbox.js');
 self.addEventListener('message', event => {
   if (event.data) {
   //  let data = JSON.parse(event.data); // parse the message back to JSON
     if (event.data == "CacheIndex") { // check the action
-        self.toolbox.precache(["index.html"]); // here you can use sw-toolbox or anything to cache your stuff.
+      var toolbox = self.toolbox;
+      //self.toolbox.cache(["/linkviewer/index.html"]); // here you can use sw-toolbox or anything to cache your stuff.
+      // Get URL objects for each client's location.
+      self.clients.matchAll({includeUncontrolled: true}).then(clients => {
+        for (const client of clients) {
+          const clientUrl = new URL(client.url);
+          var j = 0;
+        }
+      });
+
+      caches.open(CACHE_NAME).then(function (cache) {
+        console.log('Adding loaded index.html : ' + CACHE_NAME)
+        return cache.put(["/linkviewer/"]);
+      })
     }
   }
 });
