@@ -24,7 +24,6 @@ function str2ab(str) {
       //  var buf = str2ab(chunk);
       //  var compressed = new TextEncoder("utf-8").encode(chunk);
       //  var test = pako.inflate(new Uint8Array(chunk), { to: 'string' });
-
         var data = JSON.parse(chunk);
         count++;
         //var data3 = JSON.stringify(chunk.slice(9, chunk.length-2));
@@ -48,6 +47,17 @@ function str2ab(str) {
     }
 
     xhr.onprogress = function() {
+
+      //const strData = atob(xhr.response);
+      // split it into an array rather than a "string"
+      //const charData = strData.split('').map(function(x){return x.charCodeAt(0); });
+      // convert to binary
+    //  var binData = new Uint8Array(charData);
+
+    //  var binData = str2ab(xhr.response);
+
+    //  var de = pako.inflate(binData, { to: 'string' })
+    //  var de = window.pako.inflate(xhr.response, { to: 'string' });
       var parts = xhr.response.slice(pos).split('\n');
 
       parts.slice(0, -1).forEach(function(part) {
@@ -57,10 +67,11 @@ function str2ab(str) {
     };
 
     xhr.onload = function() {
-      //xhr.response = gzip;
+      //var binData = str2ab(xhr.response);
+      //var de = window.pako.inflate(xhr.response, { to: 'string' })
       var chunk = xhr.response.slice(pos);
       if (chunk)
-      processChunk(buffer);
+      processChunk(buf);
 
 
       resolve();
