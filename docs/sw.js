@@ -4,8 +4,8 @@ var CACHE_NAME = APP_PREFIX + VERSION
 var URLS = [                            // Add URL you want to cache in this list.
 //  '/linkviewer/',                     // If you have separate JS/CSS files,
 //  '/linkviewer/index.html',
-  '/linkviewer/data/index2.json',
-  '/linkviewer/data/links_trunc_ndjson4.json'
+  '/linkviewer/data/index.json',
+  '/linkviewer/data/links.json'
 ]
 
 // Respond with cached resources
